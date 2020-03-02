@@ -24,10 +24,10 @@ pkgver() {
 
 build() {
 	cd libretro-beetle-psx
-	make
+	make HAVE_LIGHTREC=1
 	cp mednafen_psx_libretro.so "${srcdir}"/
 	make clean
-	make HAVE_HW=1
+	make HAVE_HW=1 HAVE_LIGHTREC=1
 	cp mednafen_psx_hw_libretro.so "${srcdir}"/
 }
 
